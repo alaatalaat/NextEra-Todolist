@@ -1,0 +1,9 @@
+
+input,textarea{outline: none!important;box-shadow:none!important;}
+.modal-header {
+  border-bottom: none;
+}
+.btn{border:none;}
+#title{background:transparent;}
+#showall,.card#headre{background:#003049;color:#fff;}
+h4+#allTasks{color:#003049;}

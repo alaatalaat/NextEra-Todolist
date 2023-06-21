@@ -1,0 +1,91 @@
+<div class="containr-fluid">
+  <div class="container">
+    <div class="row my-5">
+      <div class="col-sm-12 col-md-6 mx-auto bg-white shadow pb-5">
+
+        <div class="card text-center mt-4" id="headre">
+          <h4 class="ps-3 pt-1">{{'nextera to do list'|uppercase}}</h4>
+        </div>
+
+        <div class="">
+          <div class="input-group pt-4 pb-1">
+            <input type="text" class="form-control" placeholder="ENTER TASK"
+            name="task" [(ngModel)]="addTaskValue" (keydown.enter)="addTask()" />
+            <button class="btn btn-success" type="button" (click)="addTask()">
+              <i class="fa-solid fa-plus"></i>
+            </button>
+          </div>
+          <div class="input-group">
+            <textarea type="text" class="form-control" placeholder="DESCRIPTION"
+            name="taskDescription" [(ngModel)]="addTaskDes"></textarea>
+          </div>
+        </div>
+
+        <h4 class="mt-4"><b>TASKS :</b></h4>
+        <div id="allTasks">
+          <div class="bg-light" *ngFor="let task of taskArr;let i=index">
+            <div class="p-2 shadow border" #el >
+              <div class="input-group row ps-3 bg">
+
+                <div class="card col-md-9 border-0" id="title">{{task.title}}</div>
+                <button class="btn col" type="button" (click)="call(task)"
+                  data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  <i class="fa-solid fa-pen-to-square text-secondary"></i>
+                </button>
+                <button class="btn col" (click)="deleteTask(task)">
+                  <i class="fa-sharp fa-solid fa-trash text-danger"></i>
+                </button>
+                <button class="btn col" (click)="doneTask(el)">
+                  <i class="fa-solid fa-square-check text-success"></i>
+                </button>
+
+              </div>
+            </div>
+            <!-- <div class="p-2 shadow border" #el *ngIf="!disable">
+              <div class="input-group row ps-3 bg">
+
+                <div class="card col-md-9 border-0" id="title">{{task.title}}</div>
+                <button class="btn col" type="button" (click)="call(task)"
+                  data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  <i class="fa-solid fa-pen-to-square text-secondary"></i>
+                </button>
+                <button class="btn col" (click)="deleteTask(task)">
+                  <i class="fa-sharp fa-solid fa-trash text-danger"></i>
+                </button>
+                <button class="btn col" (click)="doneTask(el)">
+                  <i class="fa-solid fa-square-check text-success"></i>
+                </button>
+
+              </div>
+            </div> -->
+          </div>
+        </div>
+
+        <!-- Show All Tasks -->
+        <!-- <button class="btn mt-3" *ngIf="taskArr.length>5" #btnShow (click)="allTasks(btnShow)" id="showall">{{'All Tasks'|uppercase}}</button> -->
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-body">
+                <div class="input-group py-4">
+                  <input type="text" class="form-control" placeholder="Edit TASK"
+                  name="task" [(ngModel)]="editTaskValue" />
+                  <button class="btn btn-success" data-bs-dismiss="modal" type="button" (click)="editTask()">
+                    <i class="fa-solid fa-floppy-disk"></i>
+                  </button>
+                </div>
+                <div class="input-group">
+                  <textarea type="text" class="form-control" placeholder="Edit DESCRIPTION"
+                  name="taskDescription" [(ngModel)]="editTaskDes"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

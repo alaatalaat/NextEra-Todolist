@@ -1,0 +1,29 @@
+{
+  "tasks": [
+    {
+      "id": 6,
+      "title": "Vue  Exercises",
+      "description": "Vue lets you build user interfaces out of individual pieces called components. Create your own React components like Thumbnail, LikeButton, and Video. Then combine them into entire screens, pages, and apps.\n\n"
+    },
+    {
+      "id": 7,
+      "title": "Css Exercises",
+      "description": "from w3school "
+    },
+    {
+      "id": 8,
+      "title": "Angular Exercises",
+      "description": "from angular website you can study it"
+    },
+    {
+      "id": 9,
+      "title": "Pug.js Exercises",
+      "description": "study it from pugjs website"
+    },
+    {
+      "id": 10,
+      "title": "HTML Exercises",
+      "description": "study html from w3school"
+    }
+  ]
+}
